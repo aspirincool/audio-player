@@ -3,13 +3,21 @@ var fullProgress = parseInt($('.audio-progress-bar-wrapper').css('width')) - 15;
 var currentProgress = 0;
 var progressDrag = false;
 $(document).ready(function() {
-	var minutes = Math.floor(music.duration/60);
-	var seconds = Math.floor(music.duration - minutes*60);
+	var minutes
+	var seconds
+	let getMinutes = setInterval(function () {
+		minutes = Math.floor(music.duration/60);
+		seconds = Math.floor(music.duration - minutes*60);
+		if(!(isNaN(minutes) || isNaN(seconds))) {
+			clearInterval(getMinutes)
+			$('.audio-song-length-minutes').text(minutes);
+			$('.audio-song-length-seconds').text(seconds);
+		}
+	}, 100)
 	var currentMinutes;
 	var currentSeconds;
 	
-	$('.audio-song-length-minutes').text(minutes);
-	$('.audio-song-length-seconds').text(seconds);
+
 	$('.play-pause').click(function(event) {
 		$(this).toggleClass('pause');
 		if ($(this).hasClass('pause')) {
