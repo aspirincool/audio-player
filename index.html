@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<img src="img/m1000x1000.jpg" alt="" class="audio-player-background-image">
+	<div class="audio-player-card">
+		<audio id="eminem" controls ontimeupdate="timeUpdate();" onended="$('.play-pause').removeClass('pause');">
+  			<source src="music/eminem-when-im-gone.mp3" type="audio/mpeg">
+		</audio>
+		<div class="audio-img"></div>
+		<div class="audio-progress-bar-wrapper">
+			<div class="audio-progress-bar-loading"></div>
+			<div class="audio-progress-bar-playing">
+				<div class="audio-progress-bar-playing-point"></div>
+			</div>
+		</div>
+		<div class="audio-bottom-content">
+			<div class="audio-song-length-wrapper">
+				<div class="audio-song-progress-length">
+					<span id="tracktime" class="audio-song-progress-minutes">0</span>
+					<span>:</span>
+					<span class="audio-song-progress-seconds">00</span>
+				</div>
+				<div class="audio-song-length">
+					<span class="audio-song-length-minutes">0</span>
+					<span>:</span>
+					<span class="audio-song-length-seconds">00</span>
+				</div>
+			</div>			
+			<div class="audio-song-name">When You're Gone</div>
+			<div class="audio-song-author">Eminem</div>
+			<div class="buttons-wrapper">
+				<div class="previous"></div>
+				<div class="play-pause"></div>
+				<div class="next"></div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

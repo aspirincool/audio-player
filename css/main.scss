@@ -1,0 +1,124 @@
+body {
+	background: #333;
+}
+
+audio {
+	display: none;
+}
+
+.audio-player-background-image {
+	position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    filter: blur(15px);
+}
+
+.audio-player-card {
+	width: 400px;
+	margin: 50px auto;
+	border-radius: 50px 0;
+	overflow: hidden;
+	//background: #fff;
+	.audio-progress-bar-wrapper {
+		height: 4px;
+		background: #5ef557;
+		width: 100%;
+		position: relative;
+	}
+	.audio-progress-bar-loading {
+		height: 100%;
+		background: #00c121;
+		width: 55%;
+		position: absolute;
+	}
+	.audio-progress-bar-playing {
+		height: 100%;
+		background: #008f00;
+		width: 30%;
+		position: absolute;
+		.audio-progress-bar-playing-point {
+			content: "";
+    		width: 18px;
+    		height: 18px;
+    		background: #008f00;
+    		display: block;
+    		border-radius: 50%;
+    		right: -15px;
+    		position: absolute;
+    		top: -7px;
+		}
+	}
+	.audio-bottom-content {
+		padding: 5px 15px 40px; // 25...
+		text-align: center;
+		font-family: "Play";
+		background: #fff;
+		.audio-song-length-wrapper {
+			display: flex;
+			justify-content: space-between;
+			.audio-song-length-minutes {
+
+			}
+			.audio-song-length-seconds {
+			
+			}
+		}
+		.audio-song-name {
+			font-size: 23px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.audio-song-author {
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+		.buttons-wrapper {
+			display: flex;
+			margin: auto;
+			width: 50%;
+			.next, .previous {
+				background: url('../img/next-solid.png') no-repeat center;
+				background-size: contain;
+				width: 25px;
+    			height: 30px;
+			}
+			.next {
+				
+			}
+			.previous {
+				transform: rotate(180deg);	
+			}
+			.play-pause {
+				height: 30px;
+    			box-sizing: border-box;
+    			border-style: solid;
+    			border-width: 15px 0px 15px 25px;
+    			border-color: transparent;
+    			border-left-color: #000;
+    			width: 0;
+    			margin: auto;
+    			display: flex;
+    			position: relative;
+    			transition: .1s;
+    			cursor: pointer;
+    			&.pause {
+    				border-style: double;
+					border-width: 0px 0px 0px 25px;
+					transition: .1s;
+    			}
+			}
+		}
+	}
+}
+
+.audio-img {
+	border-radius: 30px 0 0;
+	text-align: center;
+    //border-bottom: 1px solid #efefef;
+    background: url(../img/m1000x1000.jpg) center no-repeat;
+    width: 100%;
+    height: 400px;
+    background-size: contain;
+}
